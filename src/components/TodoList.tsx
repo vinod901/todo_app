@@ -12,7 +12,6 @@ const TodoList = (props: any) => {
         }
         const newTodos = [todo, ...todos];
         setTodos(newTodos)
-        console.log(todos);
     }
 
     const updateTodo = (todoId: any, newValue: any) => {
@@ -39,7 +38,7 @@ const TodoList = (props: any) => {
 
     return <>
         <div className="background">
-            <TodoForm onSubmit={addTodo} btn="Add TODO" text="Add a TODO!!!" />
+            <TodoForm onSubmit={addTodo} btn="Add TODO" text="Add a TODO!!!" class="" />
             <div className="layout">
                 <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
             </div></div></>

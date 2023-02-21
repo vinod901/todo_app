@@ -17,11 +17,9 @@ const Todo = (props: any) => {
         });
     };
 
-
-
     const render = (todo: any) => {
         if (edit.id) {
-            return <TodoForm edit={edit} onSubmit={submitUpdate} btn="Update" onChange={(e: any) => { console.log(e.target.value) }} text="Update TODO!!!" />;
+            return <TodoForm edit={edit} onSubmit={submitUpdate} btn="Update" text="Update TODO!!!" class="edit" />;
         }
         return <div
             className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
@@ -42,7 +40,7 @@ const Todo = (props: any) => {
         </div>
     }
 
-    return <div className="grid">{props.todos.map((todo: any, index: any) => (
+    return <div className="grid">{props.todos.map((todo: any) => (
         render(todo)
     ))}</div>
 };

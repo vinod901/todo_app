@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-
 import "../App.css"
 
 const Form = (props: any) => {
@@ -24,9 +23,18 @@ const Form = (props: any) => {
 
     return <>
         <div className='form'>
-            <form className='todo-form' onSubmit={handleSubmit}>
-                <input type="text" placeholder={props.text} value={input} name="text" className='todo-input' onChange={handleChange} ref={inputRef} />
-                <button className='todo-button'>{props.btn}</button>
+            <form onSubmit={handleSubmit} className='todo-form'>
+                <input
+                    placeholder={props.text}
+                    value={input}
+                    onChange={handleChange}
+                    name='text'
+                    ref={inputRef}
+                    className={`todo-input ${props.class}`}
+                />
+                <button onClick={handleSubmit} className={`todo-button ${props.class}`}>
+                    {props.btn}
+                </button>
             </form>
         </div>
     </>
