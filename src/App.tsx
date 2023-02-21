@@ -1,11 +1,10 @@
-import React from "react";
-import Grid from "./components/Grid"
+import TodoList from "./components/TodoList"
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Grid />
+      <TodoList />
     </div>
   );
 }
